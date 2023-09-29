@@ -13,7 +13,7 @@ struct MultipleAnswerQuestion: View {
 		VStack(alignment: .leading, spacing: 0.0) {
 			HeaderView(title: title, subtitle: question)
 			
-			ForEach(store.options.indices) { i in
+			ForEach(store.options.indices, id: \.self) { i in
 				MultipleTextSelectionCell(option: $store.options[i])
 			}
 			
